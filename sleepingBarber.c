@@ -22,9 +22,9 @@ pthread_t barPinta, barCabelo, barBa;
 int bId1 = 1, bId2 = 2, bId3 = 3;
 
 //FUNCOES DE BARBEIRO
-void pintaCabelo(){printf("O barbeiro está pintando o cabelo!\n");}//essas funcoes sao so printf mesmo ,-,
-void cortaCabelo(){printf("O barbeiro está cortando o cabelo!\n");}
-void fazBarba(){printf("O barbeiro está fazendo a barba!\n");}
+void pintaCabelo(){printf("O barbeiro está pintando o cabelo!\n");sleep(rand()%25);}//essas funcoes sao so printf mesmo ,-,
+void cortaCabelo(){printf("O barbeiro está cortando o cabelo!\n");sleep(rand()%15);}
+void fazBarba(){printf("O barbeiro está fazendo a barba!\n");sleep(rand()%7);}
 
 //FUNCOES DE CLIENTE
 void cabelo(){printf("O cliente está cortando o cabelo!\n");}
@@ -80,6 +80,8 @@ void client(int * id) {
 	}
 	pthread_exit(NULL);
 }
+
+
 int main(void){
 
 	sem_init(&client1, 1, 0);
@@ -101,7 +103,7 @@ int main(void){
 
 	while(1){
  		pthread_create(&c1, NULL, (void *) client, &vetor[rand()%3]);
-		sleep(rand()%15);
+		sleep(rand()%5);
 	}
 	return 0;
 }
