@@ -6,9 +6,6 @@
 
 
 #define CHAIRS 7
-//Oi Alysson eu dei overwrite nas coisas que você fez pq a biblioteca do C para
-//semaforo é melhor =P
-
 
 //Lembrete: usar sem_post(a.k.a up) e sem_wait(a.k.a down)
 sem_t mutex, barber1, barber2, barber3;
@@ -20,13 +17,9 @@ int waiting = 0;		//Quantos clientes estao na fila de espera
 
 //Pode pintar cabelo, cortar o cabelo e fazer a barba
 pthread_t barPinta, barCabelo, barBa;
+
 //Um barbeiro(thread) para cada funcao
 int bId1 = 1, bId2 = 2, bId3 = 3;
-int cId1 = 1, cId2 = 2, cId3 = 3;
-
-
-
-
 
 //FUNCOES DE BARBEIRO
 void pintaCabelo(){printf("O barbeiro está pintando o cabelo!\n");}//essas funcoes sao so printf mesmo ,-,
@@ -105,8 +98,6 @@ int main(void){
 	pthread_create(&barCabelo, NULL, (void *) barber, &bId1);
 	pthread_create(&barPinta, NULL, (void *) barber, &bId2);
 	pthread_create(&barBa, NULL, (void *) barber, &bId3);
-
-
 
 	while(1){
  		pthread_create(&c1, NULL, (void *) client, &vetor[rand()%3]);
