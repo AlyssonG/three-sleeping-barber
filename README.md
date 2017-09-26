@@ -10,4 +10,4 @@ Após compilar, use o comando:
 > ./sleepingbarbers
 
 Componentes do grupo:
-Alysson Gomes,Carolina Ransatto, João Vitor Monteiro e Matheus Moraes
+Alysson Gomes, Carolina Ransatto, João Vitor Monteiro e Matheus Moraes
